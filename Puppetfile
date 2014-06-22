@@ -59,3 +59,9 @@ github "xquartz",     "1.1.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "chrome"
+github "spotify",     "1.0.2", :repo => "rogerhub/puppet-spotify"
+github "osx"
+github "fish"
+github "brewcask",    "0.0.3", :repo => "rogerhub/puppet-brewcask"

@@ -4,9 +4,19 @@ GITHUBTARBALL
     boxen (3.6.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.1.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-fish
+  specs:
+    fish (1.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -54,6 +64,11 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-osx
+  specs:
+    osx (2.7.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-phantomjs
   specs:
     phantomjs (2.3.0)
@@ -98,9 +113,22 @@ GITHUBTARBALL
   specs:
     module-data (0.0.3)
 
+GITHUBTARBALL
+  remote: rogerhub/puppet-brewcask
+  specs:
+    brewcask (0.0.3)
+
+GITHUBTARBALL
+  remote: rogerhub/puppet-spotify
+  specs:
+    spotify (1.0.2)
+
 DEPENDENCIES
   boxen (= 3.6.1)
+  brewcask (= 0.0.3)
+  chrome (>= 0)
   dnsmasq (= 1.0.1)
+  fish (>= 0)
   foreman (= 1.2.0)
   gcc (= 2.0.101)
   git (= 2.4.0)
@@ -112,10 +140,12 @@ DEPENDENCIES
   nginx (= 1.4.3)
   nodejs (= 3.7.0)
   openssl (= 1.0.0)
+  osx (>= 0)
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
   repository (= 2.3.0)
   ruby (= 8.0.4)
+  spotify (= 1.0.2)
   stdlib (= 4.2.1)
   sudo (= 1.0.0)
   xquartz (= 1.1.1)
