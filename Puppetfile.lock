@@ -14,6 +14,11 @@ GITHUBTARBALL
     dnsmasq (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-dropbox
+  specs:
+    dropbox (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-fish
   specs:
     fish (1.0.0)
@@ -128,6 +133,7 @@ DEPENDENCIES
   brewcask (= 0.0.3)
   chrome (>= 0)
   dnsmasq (= 1.0.1)
+  dropbox (>= 0)
   fish (>= 0)
   foreman (= 1.2.0)
   gcc (= 2.0.101)

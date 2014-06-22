@@ -2,15 +2,26 @@ class people::rogerhub {
   include chrome
   include spotify
   include brewcask
+  include dropbox
 
   class { 'fish':
     chsh => true;
   }
 
   package {
+    ['rdiff-backup', 'awscli']:
+      ensure => installed,
+      provider => 'homebrew';
     ['gpgtools', 'macvim', 'keepassx']:
       ensure => installed,
       provider => 'brewcask';
+  }
+
+  ruby_gem {
+    'tugboat for 2.0.0':
+      ensure => present,
+      gem => 'tugboat',
+      ruby_version => '2.0.0';
   }
 
   include osx::dock::autohide
@@ -79,5 +90,16 @@ class people::rogerhub {
       ensure => "${home}/Configuration/config.fish";
     "${home}/Local":
       ensure => directory;
+    "${home}/.aws":
+      ensure => "${home}/Configuration/aws";
+    "${home}/.tugboat":
+      ensure => "${home}/Configuration/tugboat";
+  }
+
+  file {
+    "/usr/bin/fish":
+      ensure => "/opt/boxen/homebrew/bin/fish",
+      owner => root,
+      group => wheel;
   }
 }
