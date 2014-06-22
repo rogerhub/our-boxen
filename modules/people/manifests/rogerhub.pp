@@ -38,6 +38,8 @@ class people::rogerhub {
       rate => 2;
     'osx::global::key_repeat_delay':
       delay => 15;
+    'osx::dock::hot_corners':
+      bottom_left => "Put Display to Sleep";
   }
 
   $home = "/Users/${::boxen_user}"
