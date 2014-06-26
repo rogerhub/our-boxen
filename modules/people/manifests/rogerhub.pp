@@ -96,6 +96,8 @@ class people::rogerhub {
       ensure => "${home}/Configuration/aws";
     "${home}/.tugboat":
       ensure => "${home}/Configuration/tugboat";
+    "${home}/.bcrc":
+      ensure => "${home}/Configuration/bcrc";
   }
 
   file {
