@@ -12,7 +12,7 @@ class people::rogerhub {
     ['rdiff-backup', 'awscli']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash']:
       ensure => installed,
       provider => 'brewcask';
   }
