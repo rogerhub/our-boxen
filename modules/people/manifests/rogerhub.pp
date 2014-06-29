@@ -92,12 +92,13 @@ class people::rogerhub {
       ensure => "${home}/Configuration/config.fish";
     "${home}/Local":
       ensure => directory;
-    "${home}/.aws":
-      ensure => "${home}/Configuration/aws";
-    "${home}/.tugboat":
-      ensure => "${home}/Configuration/tugboat";
     "${home}/.bcrc":
       ensure => "${home}/Configuration/bcrc";
+    "${home}/.aws":
+      ensure => directory,
+      mode => 700;
+    "${home}/.tugboat":
+      mode => 600;
   }
 
   file {
