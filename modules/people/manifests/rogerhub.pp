@@ -9,10 +9,10 @@ class people::rogerhub {
   }
 
   package {
-    ['rdiff-backup', 'awscli']:
+    ['rdiff-backup', 'awscli', 'fswatch']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc']:
       ensure => installed,
       provider => 'brewcask';
   }
@@ -22,14 +22,23 @@ class people::rogerhub {
       ensure => present,
       gem => 'tugboat',
       ruby_version => '2.0.0';
+    'sass for 2.0.0':
+      ensure => present,
+      gem => 'sass',
+      ruby_version => '2.0.0';
+    'uglifier for 2.0.0':
+      ensure => present,
+      gem => 'uglifier',
+      ruby_version => '2.0.0';
   }
 
-  include osx::dock::autohide
+  include osx::dock::disable
   include osx::no_network_dsstores
   include osx::finder::unhide_library
   include osx::global::expand_save_dialog
   include osx::global::disable_key_press_and_hold
   include osx::global::enable_keyboard_control_access
+  include osx::global::disable_autocorrect
 
   include osx::software_update
 
