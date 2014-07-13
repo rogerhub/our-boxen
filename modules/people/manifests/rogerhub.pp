@@ -12,7 +12,7 @@ class people::rogerhub {
     ['rdiff-backup', 'awscli', 'fswatch']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre']:
       ensure => installed,
       provider => 'brewcask';
   }
@@ -32,7 +32,6 @@ class people::rogerhub {
       ruby_version => '2.0.0';
   }
 
-  include osx::dock::disable
   include osx::no_network_dsstores
   include osx::finder::unhide_library
   include osx::global::expand_save_dialog
@@ -49,6 +48,8 @@ class people::rogerhub {
       delay => 15;
     'osx::dock::hot_corners':
       bottom_left => "Put Display to Sleep";
+    'osx::dock::icon_size':
+      size => 36;
   }
 
   $home = "/Users/${::boxen_user}"
