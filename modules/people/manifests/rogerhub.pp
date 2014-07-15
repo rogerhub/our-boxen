@@ -9,12 +9,22 @@ class people::rogerhub {
   }
 
   package {
-    ['rdiff-backup', 'awscli', 'fswatch']:
+    ['rdiff-backup', 'awscli', 'fswatch', 'go']:
       ensure => installed,
       provider => 'homebrew';
     ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre']:
       ensure => installed,
       provider => 'brewcask';
+  }
+
+  include nodejs::v0_10
+
+  class { 'nodejs::global':
+    version => 'v0.10.26';
+  }
+
+  nodejs::module { 'localtunnel':
+    node_version => 'v0.10';
   }
 
   ruby_gem {
@@ -108,6 +118,8 @@ class people::rogerhub {
       ensure => directory,
       mode => 700;
     "${home}/.tugboat":
+      mode => 600;
+    "${home}/.megacmd.json":
       mode => 600;
   }
 
