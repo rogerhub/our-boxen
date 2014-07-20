@@ -3,6 +3,7 @@ class people::rogerhub {
   include spotify
   include brewcask
   include dropbox
+  include java
 
   class { 'fish':
     chsh => true;
