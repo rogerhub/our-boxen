@@ -13,7 +13,7 @@ class people::rogerhub {
     ['rdiff-backup', 'awscli', 'fswatch', 'go']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine']:
       ensure => installed,
       provider => 'brewcask';
   }
@@ -80,6 +80,8 @@ class people::rogerhub {
       value => "\"!/bin/bash -c 'git diff $(git merge-base HEAD master) --' __dummy__\"";
     'alias.st':
       value => 'status';
+    'alias.ci':
+      value => 'commit';
     'alias.co':
       value => 'checkout';
     'alias.up':
