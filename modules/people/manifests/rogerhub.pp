@@ -4,6 +4,8 @@ class people::rogerhub {
   include brewcask
   include dropbox
   include java
+  include virtualbox
+  include vagrant
 
   class { 'fish':
     chsh => true;
