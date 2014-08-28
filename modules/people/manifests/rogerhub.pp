@@ -12,10 +12,10 @@ class people::rogerhub {
   }
 
   package {
-    ['rdiff-backup', 'awscli', 'fswatch', 'go']:
+    ['rdiff-backup', 'awscli', 'fswatch', 'go', 'ctags']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine', 'nmap']:
       ensure => installed,
       provider => 'brewcask';
   }
@@ -42,6 +42,10 @@ class people::rogerhub {
     'uglifier for 2.0.0':
       ensure => present,
       gem => 'uglifier',
+      ruby_version => '2.0.0';
+    'sqlite3 for 2.0.0':
+      ensure => present,
+      gem => 'sqlite3',
       ruby_version => '2.0.0';
   }
 
