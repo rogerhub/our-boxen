@@ -84,6 +84,10 @@ class people::rogerhub {
       value => 'diff --cached';
     'alias.dm':
       value => "\"!/bin/bash -c 'git diff $(git merge-base HEAD master) --' __dummy__\"";
+    'alias.lf':
+      value => 'ls-files';
+    'alias.li':
+      value => 'ls-files -o -i --exclude-standard';
     'alias.st':
       value => 'status';
     'alias.ci':
@@ -123,6 +127,8 @@ class people::rogerhub {
       ensure => directory;
     "${home}/.bcrc":
       ensure => "${home}/Configuration/bcrc";
+    "${home}/.scrc":
+      ensure => "${home}/Configuration/scrc";
     "${home}/.aws":
       ensure => directory,
       mode => 700;
