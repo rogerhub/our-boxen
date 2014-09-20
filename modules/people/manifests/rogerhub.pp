@@ -6,6 +6,7 @@ class people::rogerhub {
   include java
   include virtualbox
   include vagrant
+  include python
 
   class { 'fish':
     chsh => true;
@@ -65,6 +66,8 @@ class people::rogerhub {
       delay => 15;
     'osx::dock::hot_corners':
       bottom_left => "Put Display to Sleep";
+    'osx::dock::position':
+      position => 'bottom';
     'osx::dock::icon_size':
       size => 36;
   }
@@ -94,6 +97,8 @@ class people::rogerhub {
       value => 'commit';
     'alias.co':
       value => 'checkout';
+    'alias.subdate':
+      value => 'submodule foreach git pull';
     'alias.up':
       value => "!sh -c 'git pull --prune && git submodule update --init --recursive'";
     'alias.unstage':
