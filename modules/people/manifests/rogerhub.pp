@@ -1,4 +1,7 @@
 class people::rogerhub {
+
+  $home = "/Users/${::boxen_user}"
+
   include chrome
   include spotify
   include brewcask
@@ -50,6 +53,14 @@ class people::rogerhub {
       ruby_version => '2.0.0';
   }
 
+  python::pip {
+    'ipython':
+      # screw your rules
+      virtualenv => '/opt/boxen/homebrew/',
+      ensure => present;
+  }
+
+
   include osx::no_network_dsstores
   include osx::finder::unhide_library
   include osx::global::expand_save_dialog
@@ -71,8 +82,6 @@ class people::rogerhub {
     'osx::dock::icon_size':
       size => 36;
   }
-
-  $home = "/Users/${::boxen_user}"
 
   git::config::global {
     'user.name':
