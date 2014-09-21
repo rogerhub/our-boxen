@@ -150,6 +150,8 @@ class people::rogerhub {
       mode => 600;
     "${home}/.megacmd.json":
       mode => 600;
+    "${home}/.ipython":
+      ensure => "${home}/Configuration/ipython";
     "/opt/boxen/repo/bin/gvim":
       ensure => '/usr/bin/vim'; /* Stub to help fish autocompletion (overridden by fish config) */
   }
