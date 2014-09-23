@@ -54,7 +54,7 @@ class people::rogerhub {
   }
 
   python::pip {
-    'ipython':
+    ['ipython', 'line-profiler', 'psutil', 'ipdb']:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
       ensure => present;
@@ -80,7 +80,7 @@ class people::rogerhub {
     'osx::dock::position':
       position => 'bottom';
     'osx::dock::icon_size':
-      size => 36;
+      size => 48;
   }
 
   git::config::global {
