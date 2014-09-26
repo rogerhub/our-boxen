@@ -162,4 +162,8 @@ class people::rogerhub {
       owner => root,
       group => wheel;
   }
+
+  class { 'nginx':
+    ensure => absent;
+  }
 }
