@@ -10,6 +10,7 @@ class people::rogerhub {
   include virtualbox
   include vagrant
   include python
+  include adobe_reader
 
   class { 'fish':
     chsh => true;
