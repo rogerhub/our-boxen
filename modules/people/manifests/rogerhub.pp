@@ -55,7 +55,7 @@ class people::rogerhub {
   }
 
   python::pip {
-    ['ipython', 'line-profiler', 'psutil', 'ipdb']:
+    ['ipython', 'line-profiler', 'psutil', 'ipdb', 'pycosat']:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
       ensure => present;
