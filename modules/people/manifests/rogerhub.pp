@@ -10,6 +10,7 @@ class people::rogerhub {
   include vagrant
   include python
   include adobe_reader
+  include adobe_creative_cloud
 
   class {
     'fish':
