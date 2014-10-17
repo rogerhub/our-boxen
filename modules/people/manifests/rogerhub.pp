@@ -7,13 +7,16 @@ class people::rogerhub {
   include brewcask
   include dropbox
   include java
-  include virtualbox
   include vagrant
   include python
   include adobe_reader
 
-  class { 'fish':
-    chsh => true;
+  class {
+    'fish':
+      chsh => true;
+    'virtualbox':
+      version => '4.3.18',
+      patch_level => '96516';
   }
 
   package {

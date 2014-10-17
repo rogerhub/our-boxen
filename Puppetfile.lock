@@ -11,7 +11,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-chrome
   specs:
-    chrome (1.1.2)
+    chrome (1.2.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
@@ -21,7 +21,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-dropbox
   specs:
-    dropbox (1.2.0)
+    dropbox (1.4.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-fish
@@ -61,7 +61,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-java
   specs:
-    java (1.5.0)
+    java (1.7.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -81,7 +81,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-osx
   specs:
-    osx (2.7.0)
+    osx (2.7.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-phantomjs
@@ -116,12 +116,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (3.1.1)
+    vagrant (3.2.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-virtualbox
   specs:
-    virtualbox (1.0.9)
+    virtualbox (1.0.13)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -183,6 +183,6 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sudo (= 1.0.0)
   vagrant (>= 0)
-  virtualbox (>= 0)
+  virtualbox (= 1.0.13)
   xquartz (= 1.2.1)
 
