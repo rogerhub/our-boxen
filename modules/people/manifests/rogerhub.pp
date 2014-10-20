@@ -111,6 +111,10 @@ class people::rogerhub {
       value => 'commit';
     'alias.co':
       value => 'checkout';
+    'alias.ss':
+      value => 'show --name-status';
+    'alias.ds':
+      value => 'diff --name-status';
     'alias.subdate':
       value => 'submodule foreach git pull';
     'alias.up':
