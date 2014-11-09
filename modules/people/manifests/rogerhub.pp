@@ -24,7 +24,7 @@ class people::rogerhub {
     ['rdiff-backup', 'awscli', 'fswatch', 'go', 'ctags', 'the_silver_searcher', 'rdesktop']:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine', 'nmap']:
+    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine', 'nmap', 'sshfs', 'osxfuse']:
       ensure => installed,
       provider => 'brewcask';
   }
@@ -59,7 +59,7 @@ class people::rogerhub {
   }
 
   python::pip {
-    ['ipython', 'line-profiler', 'psutil', 'ipdb', 'pycosat']:
+    ['ipython', 'line-profiler', 'psutil', 'ipdb', 'pycosat', 'pudb']:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
       ensure => present;
