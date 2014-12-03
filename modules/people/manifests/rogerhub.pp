@@ -56,6 +56,10 @@ class people::rogerhub {
       ensure => present,
       gem => 'sqlite3',
       ruby_version => '2.0.0';
+    'puppet-lint for 2.0.0':
+      ensure => present,
+      gem => 'puppet-lint',
+      ruby_version => '2.0.0';
   }
 
   python::pip {
@@ -71,6 +75,8 @@ class people::rogerhub {
       'jinja2',
       'tornado',
       'numpy',
+      'scipy',
+      'matplotlib',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
@@ -93,7 +99,7 @@ class people::rogerhub {
     'osx::global::key_repeat_delay':
       delay => 15;
     'osx::dock::hot_corners':
-      bottom_left => "Put Display to Sleep";
+      bottom_left => 'Put Display to Sleep';
     'osx::dock::position':
       position => 'bottom';
     'osx::dock::icon_size':
@@ -134,7 +140,7 @@ class people::rogerhub {
     'alias.unstage':
       value => 'reset HEAD';
     'color.ui':
-      value => 'true';
+      value => true;
   }
 
   repository {
@@ -166,20 +172,22 @@ class people::rogerhub {
       ensure => "${home}/Configuration/scrc";
     "${home}/.aws":
       ensure => directory,
-      mode => 700;
+      mode => '0700';
     "${home}/.tugboat":
-      mode => 600;
+      mode => '0600';
     "${home}/.megacmd.json":
-      mode => 600;
+      mode => '0600';
     "${home}/.ipython":
       ensure => "${home}/Configuration/ipython";
-    "/opt/boxen/repo/bin/gvim":
-      ensure => '/usr/bin/vim'; /* Stub to help fish autocompletion (overridden by fish config) */
+    '/opt/boxen/repo/bin/gvim':
+      ensure => symlink,
+      target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
   }
 
   file {
-    "/usr/bin/fish":
-      ensure => "/opt/boxen/homebrew/bin/fish",
+    '/usr/bin/fish':
+      ensure => symlink,
+      target => '/opt/boxen/homebrew/bin/fish',
       owner => root,
       group => wheel;
   }
