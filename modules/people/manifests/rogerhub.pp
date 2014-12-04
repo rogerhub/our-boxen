@@ -139,6 +139,8 @@ class people::rogerhub {
       value => 'reset HEAD';
     'color.ui':
       value => true;
+    'core.pager':
+      value => 'less -+X -+F';
   }
 
   repository {
