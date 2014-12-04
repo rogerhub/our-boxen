@@ -29,11 +29,9 @@ class people::rogerhub {
       provider => 'brewcask';
   }
 
-  include nodejs::v0_10
-
-  class { 'nodejs::global':
-    version => 'v0.10.26';
-  }
+  # class { 'nodejs::global':
+  #   version => 'v0.10.26';
+  # }
 
   nodejs::module { 'localtunnel':
     node_version => 'v0.10';
