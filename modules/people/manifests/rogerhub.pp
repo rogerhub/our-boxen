@@ -21,10 +21,38 @@ class people::rogerhub {
   }
 
   package {
-    ['rdiff-backup', 'awscli', 'fswatch', 'go', 'ctags', 'the_silver_searcher', 'rdesktop', 'ant']:
+    [
+      'rdiff-backup',
+      'awscli',
+      'fswatch',
+      'go',
+      'ctags',
+      'the_silver_searcher',
+      'rdesktop',
+      'ant',
+      'maven',
+    ]:
       ensure => installed,
       provider => 'homebrew';
-    ['gpgtools', 'macvim', 'keepassx', 'gnucash', 'google-hangouts', 'vlc', 'inkscape', 'xquartz', 'calibre', 'basictex', 'texshop', 'caffeine', 'nmap', 'sshfs', 'osxfuse', 'tunnelblick', 'eclipse-java']:
+    [
+      'gpgtools',
+      'macvim',
+      'keepassx',
+      'gnucash',
+      'google-hangouts',
+      'vlc',
+      'inkscape',
+      'xquartz',
+      'calibre',
+      'basictex',
+      'texshop',
+      'caffeine',
+      'nmap',
+      'sshfs',
+      'osxfuse',
+      'tunnelblick',
+      'eclipse-java',
+    ]:
       ensure => installed,
       provider => 'brewcask';
   }
