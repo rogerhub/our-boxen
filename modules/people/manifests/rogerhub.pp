@@ -31,6 +31,7 @@ class people::rogerhub {
       'rdesktop',
       'ant',
       'maven',
+      'wget',
     ]:
       ensure => installed,
       provider => 'homebrew';
