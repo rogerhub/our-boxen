@@ -32,6 +32,7 @@ class people::rogerhub {
       'ant',
       'maven',
       'wget',
+      'pstree'
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -53,6 +54,7 @@ class people::rogerhub {
       'osxfuse',
       'tunnelblick',
       'eclipse-java',
+      'haskell-platform',
     ]:
       ensure => installed,
       provider => 'brewcask';
