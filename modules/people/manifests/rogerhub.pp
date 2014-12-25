@@ -32,7 +32,10 @@ class people::rogerhub {
       'ant',
       'maven',
       'wget',
-      'pstree'
+      'pstree',
+      'duplicity',
+      'fuse-zip',
+      'mcrypt',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -106,6 +109,7 @@ class people::rogerhub {
       'numpy',
       'scipy',
       'matplotlib',
+      'boto',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
@@ -182,6 +186,8 @@ class people::rogerhub {
   }
 
   file {
+    "${home}/Configuration":
+      ensure => "${home}/Development/Configuration";
     "${home}/.vim":
       ensure => "${home}/.vim-config/.vim";
     "${home}/.vimrc":
