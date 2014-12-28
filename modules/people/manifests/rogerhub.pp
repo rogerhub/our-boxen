@@ -146,6 +146,8 @@ class people::rogerhub {
       value => 'roger@rogerhub.com';
     'push.default':
       value => 'simple';
+    'alias.au':
+      value => 'add -u';
     'alias.lg':
       value => "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre    set %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit";
     'alias.dc':
@@ -219,6 +221,11 @@ class people::rogerhub {
     '/opt/boxen/repo/bin/gvim':
       ensure => symlink,
       target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
+    '/Library/Mail/Bundles/GPGMail.mailbundle':
+      ensure => absent,
+      force => true,
+      recurse => true,
+      require => Package['gpgtools'];
   }
 
   file {
