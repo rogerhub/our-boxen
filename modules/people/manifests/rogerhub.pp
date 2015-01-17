@@ -36,6 +36,9 @@ class people::rogerhub {
       'duplicity',
       'fuse-zip',
       'mcrypt',
+      'groovysdk',
+      'php55',
+      'homebrew/php/composer',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -110,6 +113,8 @@ class people::rogerhub {
       'scipy',
       'matplotlib',
       'boto',
+      'dropbox',
+      'requests',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
