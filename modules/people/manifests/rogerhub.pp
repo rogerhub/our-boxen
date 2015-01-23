@@ -39,6 +39,7 @@ class people::rogerhub {
       'groovysdk',
       'php55',
       'homebrew/php/composer',
+      'iperf',
     ]:
       ensure => installed,
       provider => 'homebrew';
