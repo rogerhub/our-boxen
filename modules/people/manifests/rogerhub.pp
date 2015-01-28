@@ -11,6 +11,7 @@ class people::rogerhub {
   include python
   include adobe_reader
   include adobe_creative_cloud
+  include spectacle
 
   class {
     'fish':
@@ -116,6 +117,7 @@ class people::rogerhub {
       'boto',
       'dropbox',
       'requests',
+      'scikit-learn',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
