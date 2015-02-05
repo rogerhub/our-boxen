@@ -215,8 +215,6 @@ class people::rogerhub {
       ensure => directory;
     "${home}/.bcrc":
       ensure => "${home}/Configuration/bcrc";
-    "${home}/.scrc":
-      ensure => "${home}/Configuration/scrc";
     "${home}/.aws":
       ensure => directory,
       mode => '0700';
