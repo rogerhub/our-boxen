@@ -12,6 +12,13 @@ class people::rogerhub {
   include adobe_reader
   include adobe_creative_cloud
   include spectacle
+  include github_for_mac
+  include seil
+  include seil::login_item
+
+  seil::bind { 'keyboard bindings':
+    mappings => { 'capslock' => 53 }
+  }
 
   class {
     'fish':
@@ -41,6 +48,7 @@ class people::rogerhub {
       'php55',
       'homebrew/php/composer',
       'iperf',
+      'mtr',
     ]:
       ensure => installed,
       provider => 'homebrew';
