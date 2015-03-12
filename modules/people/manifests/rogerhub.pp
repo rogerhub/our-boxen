@@ -192,6 +192,8 @@ class people::rogerhub {
       value => 'reset HEAD';
     'color.ui':
       value => true;
+    'core.editor':
+      value => 'vim';
     'core.pager':
       value => 'less -+X -+F';
   }
