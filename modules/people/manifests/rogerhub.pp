@@ -71,6 +71,7 @@ class people::rogerhub {
       'tunnelblick',
       'eclipse-java',
       'haskell-platform',
+      'chefdk',
     ]:
       ensure => installed,
       provider => 'brewcask';
