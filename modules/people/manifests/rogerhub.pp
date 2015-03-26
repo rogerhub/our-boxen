@@ -49,6 +49,7 @@ class people::rogerhub {
       'homebrew/php/composer',
       'iperf',
       'mtr',
+      'unrar',
     ]:
       ensure => installed,
       provider => 'homebrew';
