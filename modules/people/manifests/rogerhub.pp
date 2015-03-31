@@ -73,6 +73,7 @@ class people::rogerhub {
       'eclipse-java',
       'haskell-platform',
       'chefdk',
+      'google-drive',
     ]:
       ensure => installed,
       provider => 'brewcask';
@@ -128,6 +129,7 @@ class people::rogerhub {
       'dropbox',
       'requests',
       'scikit-learn',
+      'gdata',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
