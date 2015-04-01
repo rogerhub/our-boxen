@@ -50,6 +50,7 @@ class people::rogerhub {
       'iperf',
       'mtr',
       'unrar',
+      'htop-osx',
     ]:
       ensure => installed,
       provider => 'homebrew';
