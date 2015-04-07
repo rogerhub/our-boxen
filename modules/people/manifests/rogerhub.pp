@@ -75,6 +75,7 @@ class people::rogerhub {
       'haskell-platform',
       'chefdk',
       'google-drive',
+      'julia',
     ]:
       ensure => installed,
       provider => 'brewcask';
