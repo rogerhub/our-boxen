@@ -1,5 +1,8 @@
 class people::rogerhub {
 
+  # TODO: Set Terminal.app to homebrew with white foreground color
+  # Change Terminal.app line height to 11/12 (0.917) to match MacVim
+
   $home = "/Users/${::boxen_user}"
 
   include chrome
@@ -158,7 +161,8 @@ class people::rogerhub {
     'osx::dock::position':
       position => 'bottom';
     'osx::dock::icon_size':
-      size => 48;
+      size => 36;
+    'osx::dock::hide_indicator_lights':;
   }
 
   git::config::global {
