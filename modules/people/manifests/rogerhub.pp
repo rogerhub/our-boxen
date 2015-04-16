@@ -1,7 +1,6 @@
 class people::rogerhub {
 
   # TODO: Set Terminal.app to homebrew with white foreground color
-  # Change Terminal.app line height to 11/12 (0.917) to match MacVim
 
   $home = "/Users/${::boxen_user}"
 
@@ -161,8 +160,21 @@ class people::rogerhub {
     'osx::dock::position':
       position => 'bottom';
     'osx::dock::icon_size':
-      size => 36;
+      size => 48;
     'osx::dock::hide_indicator_lights':;
+    'osx::global::tap_to_click':;
+  }
+
+  Boxen::Osx_defaults {
+    user => $::boxen_user,
+  }
+
+  boxen::osx_defaults {
+    'Enable Three Finger Drag':
+      domain => 'com.apple.driver.AppleBluetoothMultitouch.trackpad',
+      key => 'TrackpadThreeFingerDrag',
+      value => 1,
+      type => 'integer';
   }
 
   git::config::global {

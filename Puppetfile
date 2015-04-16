@@ -62,7 +62,7 @@ github "xquartz",     "1.2.1"
 
 github "chrome"
 github "spotify",     "1.0.2", :repo => "rogerhub/puppet-spotify"
-github "osx"
+github "osx",         "2.8.0"
 github "fish"
 github "brewcask",    "0.0.4", :repo => "rogerhub/puppet-brewcask"
 github "dropbox"
