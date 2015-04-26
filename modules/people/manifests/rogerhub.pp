@@ -53,6 +53,8 @@ class people::rogerhub {
       'mtr',
       'unrar',
       'htop-osx',
+      'wakeonlan',
+      'vim',
     ]:
       ensure => installed,
       provider => 'homebrew';
