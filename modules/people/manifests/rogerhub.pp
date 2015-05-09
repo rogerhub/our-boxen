@@ -55,6 +55,7 @@ class people::rogerhub {
       'htop-osx',
       'wakeonlan',
       'vim',
+      'tmux',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -258,6 +259,8 @@ class people::rogerhub {
       mode => '0600';
     "${home}/.ipython":
       ensure => "${home}/Configuration/ipython";
+    "${home}/.tmux.conf":
+      ensure => "${home}/Configuration/tmux.conf";
     '/opt/boxen/repo/bin/gvim':
       ensure => symlink,
       target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
