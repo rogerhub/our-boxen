@@ -56,6 +56,7 @@ class people::rogerhub {
       'wakeonlan',
       'vim',
       'tmux',
+      'scala',
     ]:
       ensure => installed,
       provider => 'homebrew';
