@@ -57,12 +57,12 @@ class people::rogerhub {
       'vim',
       'tmux',
       'scala',
+      'macvim',
     ]:
       ensure => installed,
       provider => 'homebrew';
     [
       'gpgtools',
-      'macvim',
       'keepassx',
       'gnucash',
       'google-hangouts',
@@ -82,6 +82,7 @@ class people::rogerhub {
       'chefdk',
       'google-drive',
       'julia',
+      'heroku-toolbelt',
     ]:
       ensure => installed,
       provider => 'brewcask';
@@ -138,6 +139,7 @@ class people::rogerhub {
       'requests',
       'scikit-learn',
       'gdata',
+      'dropbox',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
