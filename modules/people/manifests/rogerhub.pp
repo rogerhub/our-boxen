@@ -139,7 +139,6 @@ class people::rogerhub {
       'requests',
       'scikit-learn',
       'gdata',
-      'dropbox',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
