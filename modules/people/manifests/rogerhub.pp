@@ -24,8 +24,8 @@ class people::rogerhub {
     'fish':
       chsh => true;
     'virtualbox':
-      version => '4.3.18',
-      patch_level => '96516';
+      version => '5.0.0',
+      patch_level => '101573';
   }
 
   homebrew::tap {
