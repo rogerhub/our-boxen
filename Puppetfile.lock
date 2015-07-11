@@ -169,11 +169,6 @@ GITHUBTARBALL
     adobe_creative_cloud (1.0.0)
 
 GITHUBTARBALL
-  remote: rogerhub/puppet-brewcask
-  specs:
-    brewcask (0.0.4)
-
-GITHUBTARBALL
   remote: rogerhub/puppet-spotify
   specs:
     spotify (1.0.2)
