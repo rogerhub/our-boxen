@@ -1,7 +1,5 @@
 class people::rogerhub {
 
-  # TODO: Set Terminal.app to homebrew with white foreground color
-
   $home = "/Users/${::boxen_user}"
 
   include chrome
@@ -30,6 +28,13 @@ class people::rogerhub {
       patch_level => '96516';
   }
 
+  homebrew::tap {
+    "homebrew/php":
+      ;
+    "homebrew/x11":
+      ;
+  }
+  ->
   package {
     [
       'rdiff-backup',
@@ -67,7 +72,6 @@ class people::rogerhub {
       'gnucash',
       'google-hangouts',
       'vlc',
-      'inkscape',
       'xquartz',
       'calibre',
       'basictex',
@@ -228,8 +232,16 @@ class people::rogerhub {
   repository {
     "${home}/.vim-config":
       source => 'rogerhub/vim-config';
-    "${home}/.oh-my-zsh":
-      source => 'robbyrussell/oh-my-zsh';
+  }
+
+  exec { "fuck_puppet":
+    command => "/bin/test -e ${home}/Configuration/ssh",
+  }
+  ->
+  file {
+    "${home}/.ssh":
+      force => true,
+      ensure => "${home}/Configuration/ssh";
   }
 
   file {
@@ -241,9 +253,6 @@ class people::rogerhub {
       ensure => "${home}/.vim-config/.vimrc";
     "${home}/.gvimrc":
       ensure => "${home}/.vim-config/.gvimrc";
-    "${home}/.ssh":
-      force => true,
-      ensure => "${home}/Configuration/ssh";
     "${home}/.zshconfig":
       ensure => "${home}/Configuration/zshconfig";
     "${home}/.config/fish/config.fish":
