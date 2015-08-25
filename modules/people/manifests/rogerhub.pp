@@ -23,15 +23,17 @@ class people::rogerhub {
   class {
     'fish':
       chsh => true;
-    'virtualbox':
-      version => '5.0.0',
-      patch_level => '101573';
+    # 'virtualbox':
+    #   version => '4.3.30',
+    #   patch_level => '101610';
   }
 
   homebrew::tap {
     "homebrew/php":
       ;
     "homebrew/x11":
+      ;
+    "homebrew/fuse":
       ;
   }
   ->
@@ -74,8 +76,6 @@ class people::rogerhub {
       'vlc',
       'xquartz',
       'calibre',
-      'basictex',
-      'texshop',
       'caffeine',
       'nmap',
       'sshfs',
@@ -87,6 +87,7 @@ class people::rogerhub {
       'google-drive',
       'julia',
       'heroku-toolbelt',
+      'mactex',
     ]:
       ensure => installed,
       provider => 'brewcask';
