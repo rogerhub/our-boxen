@@ -65,6 +65,7 @@ class people::rogerhub {
       'tmux',
       'scala',
       'macvim',
+      'openssl',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -143,7 +144,9 @@ class people::rogerhub {
       'dropbox',
       'requests',
       'scikit-learn',
+      'scikit-image',
       'gdata',
+      'Pillow',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
