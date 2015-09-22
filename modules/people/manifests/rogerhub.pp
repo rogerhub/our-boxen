@@ -16,6 +16,12 @@ class people::rogerhub {
   include seil
   include seil::login_item
 
+  vagrant::plugin { "vmware-fusion": }
+  vagrant::box {
+    "puppetlabs/ubuntu-14.04-64-puppet":
+      source => "https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-14.04-64-puppet/versions/1.0.2/providers/vmware_desktop.box";
+  }
+
   seil::bind { 'keyboard bindings':
     mappings => { 'capslock' => 53 }
   }
@@ -66,6 +72,8 @@ class people::rogerhub {
       'scala',
       'macvim',
       'openssl',
+      'clang-format',
+      'imagemagick',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -86,20 +94,11 @@ class people::rogerhub {
       'haskell-platform',
       'chefdk',
       'google-drive',
-      'julia',
       'heroku-toolbelt',
       'mactex',
     ]:
       ensure => installed,
       provider => 'brewcask';
-  }
-
-  # class { 'nodejs::global':
-  #   version => 'v0.10.26';
-  # }
-
-  nodejs::module { 'localtunnel':
-    node_version => 'v0.10';
   }
 
   ruby_gem {
@@ -122,6 +121,10 @@ class people::rogerhub {
     'puppet-lint for 2.0.0':
       ensure => present,
       gem => 'puppet-lint',
+      ruby_version => '2.0.0';
+    'nokogiri for 2.0.0':
+      ensure => present,
+      gem => 'nokogiri',
       ruby_version => '2.0.0';
   }
 
@@ -168,13 +171,10 @@ class people::rogerhub {
       rate => 2;
     'osx::global::key_repeat_delay':
       delay => 15;
-    'osx::dock::hot_corners':
-      bottom_left => 'Put Display to Sleep';
     'osx::dock::position':
       position => 'bottom';
     'osx::dock::icon_size':
       size => 48;
-    'osx::dock::hide_indicator_lights':;
     'osx::global::tap_to_click':;
   }
 
