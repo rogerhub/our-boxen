@@ -78,7 +78,6 @@ class people::rogerhub {
       ensure => installed,
       provider => 'homebrew';
     [
-      'gpgtools',
       'keepassx',
       'gnucash',
       'google-hangouts',
@@ -279,11 +278,6 @@ class people::rogerhub {
     '/opt/boxen/repo/bin/gvim':
       ensure => symlink,
       target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
-    '/Library/Mail/Bundles/GPGMail.mailbundle':
-      ensure => absent,
-      force => true,
-      recurse => true,
-      require => Package['gpgtools'];
   }
 
   file {
