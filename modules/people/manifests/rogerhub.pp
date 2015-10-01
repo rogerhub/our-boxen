@@ -149,6 +149,7 @@ class people::rogerhub {
       'scikit-image',
       'gdata',
       'Pillow',
+      'cython',
     ]:
       # screw your rules
       virtualenv => '/opt/boxen/homebrew/',
