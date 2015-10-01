@@ -17,10 +17,6 @@ class people::rogerhub {
   include seil::login_item
 
   vagrant::plugin { "vmware-fusion": }
-  vagrant::box {
-    "puppetlabs/ubuntu-14.04-64-puppet":
-      source => "https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-14.04-64-puppet/versions/1.0.2/providers/vmware_desktop.box";
-  }
 
   seil::bind { 'keyboard bindings':
     mappings => { 'capslock' => 53 }
