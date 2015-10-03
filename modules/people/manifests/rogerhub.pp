@@ -11,8 +11,6 @@ class people::rogerhub {
   include python
   include adobe_reader
   include adobe_creative_cloud
-  include spectacle
-  include github_for_mac
   include seil
   include seil::login_item
 
@@ -31,8 +29,6 @@ class people::rogerhub {
   }
 
   homebrew::tap {
-    "homebrew/php":
-      ;
     "homebrew/x11":
       ;
     "homebrew/fuse":
@@ -53,11 +49,8 @@ class people::rogerhub {
       'wget',
       'pstree',
       'duplicity',
-      'fuse-zip',
       'mcrypt',
       'groovysdk',
-      'php55',
-      'homebrew/php/composer',
       'iperf',
       'mtr',
       'unrar',
@@ -68,11 +61,18 @@ class people::rogerhub {
       'scala',
       'macvim',
       'openssl',
-      'clang-format',
       'imagemagick',
     ]:
       ensure => installed,
       provider => 'homebrew';
+    'fuse-zip':
+      ensure   => installed,
+      provider => "homebrew",
+      require  => Package[osxfuse];
+    "sshfs":
+      ensure   => installed,
+      provider => "brewcask",
+      require  => Package[osxfuse];
     [
       'keepassx',
       'gnucash',
@@ -82,14 +82,12 @@ class people::rogerhub {
       'calibre',
       'caffeine',
       'nmap',
-      'sshfs',
       'osxfuse',
       'tunnelblick',
       'eclipse-java',
       'haskell-platform',
       'chefdk',
       'google-drive',
-      'heroku-toolbelt',
       'mactex',
     ]:
       ensure => installed,
