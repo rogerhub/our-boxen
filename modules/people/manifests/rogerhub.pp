@@ -62,18 +62,13 @@ class people::rogerhub {
       'macvim',
       'openssl',
       'imagemagick',
+      'gcc',
+      'fuse-zip',
     ]:
       ensure => installed,
       provider => 'homebrew';
-    'fuse-zip':
-      ensure   => installed,
-      provider => "homebrew",
-      require  => Package[osxfuse];
-    "sshfs":
-      ensure   => installed,
-      provider => "brewcask",
-      require  => Package[osxfuse];
     [
+      "sshfs",
       'keepassx',
       'gnucash',
       'google-hangouts',
@@ -93,6 +88,8 @@ class people::rogerhub {
       ensure => installed,
       provider => 'brewcask';
   }
+
+  Package[osxfuse] -> Package[sshfs] -> Package[fuse-zip]
 
   ruby_gem {
     'tugboat for 2.0.0':
@@ -149,6 +146,8 @@ class people::rogerhub {
       virtualenv => '/opt/boxen/homebrew/',
       ensure => present;
   }
+
+  Package[gcc] -> Python::Pip[scipy] -> Python::Pip[scikit-image]
 
 
   include osx::no_network_dsstores
@@ -254,7 +253,8 @@ class people::rogerhub {
     "${home}/.zshconfig":
       ensure => "${home}/Configuration/zshconfig";
     "${home}/.config/fish/config.fish":
-      ensure => "${home}/Configuration/config.fish";
+      ensure  => "${home}/Configuration/config.fish",
+      require => Package[fish];
     "${home}/Local":
       ensure => directory;
     "${home}/.bcrc":
@@ -273,14 +273,6 @@ class people::rogerhub {
     '/opt/boxen/repo/bin/gvim':
       ensure => symlink,
       target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
-  }
-
-  file {
-    '/usr/bin/fish':
-      ensure => symlink,
-      target => '/opt/boxen/homebrew/bin/fish',
-      owner => root,
-      group => wheel;
   }
 
   class { 'nginx':
