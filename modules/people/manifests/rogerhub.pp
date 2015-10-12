@@ -83,7 +83,6 @@ class people::rogerhub {
       'chefdk',
       'google-drive',
       'mactex',
-      'bettertouchtool',
     ]:
       ensure => installed,
       provider => 'brewcask';
