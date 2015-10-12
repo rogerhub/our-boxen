@@ -22,7 +22,7 @@ class people::rogerhub {
 
   class {
     'fish':
-      chsh => true;
+      chsh => false;
     # 'virtualbox':
     #   version => '4.3.30',
     #   patch_level => '101610';
@@ -80,10 +80,10 @@ class people::rogerhub {
       'osxfuse',
       'tunnelblick',
       'eclipse-java',
-      'haskell-platform',
       'chefdk',
       'google-drive',
       'mactex',
+      'bettertouchtool',
     ]:
       ensure => installed,
       provider => 'brewcask';
@@ -147,7 +147,7 @@ class people::rogerhub {
       ensure => present;
   }
 
-  Package[gcc] -> Python::Pip[scipy] -> Python::Pip[scikit-image]
+  Package[gcc] -> Python::Pip[scipy, scikit-image]
 
 
   include osx::no_network_dsstores
