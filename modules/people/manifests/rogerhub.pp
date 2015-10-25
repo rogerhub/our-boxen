@@ -64,6 +64,7 @@ class people::rogerhub {
       'imagemagick',
       'gcc',
       'fuse-zip',
+      'gettext',
     ]:
       ensure => installed,
       provider => 'homebrew';
@@ -81,7 +82,6 @@ class people::rogerhub {
       'tunnelblick',
       'eclipse-java',
       'chefdk',
-      'google-drive',
       'mactex',
     ]:
       ensure => installed,
@@ -269,6 +269,9 @@ class people::rogerhub {
       ensure => "${home}/Configuration/ipython";
     "${home}/.tmux.conf":
       ensure => "${home}/Configuration/tmux.conf";
+    "${home}/.bash_sessions_disable":
+      ensure  => file,
+      content => '';
     '/opt/boxen/repo/bin/gvim':
       ensure => symlink,
       target => '/usr/bin/vim'; # Stub to help fish autocompletion (overridden by fish config)
