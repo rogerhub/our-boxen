@@ -115,6 +115,10 @@ class people::rogerhub {
       ensure => present,
       gem => 'nokogiri',
       ruby_version => '2.0.0';
+    'iStats for 2.0.0':
+      ensure => present,
+      gem => 'iStats',
+      ruby_version => '2.0.0';
   }
 
   python::pip {
